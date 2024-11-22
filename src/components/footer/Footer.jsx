@@ -10,8 +10,6 @@ const Footer = () => {
         <div className="footerText">
             <p>Votre plateforme :</p>
             <p> Initiatives Deux-Sèvres</p>
-        </div>
-        <div>
             <p>06 79 87 56 09</p>
             <p>accompagnement@initiativedeuxsevres.fr</p>
         </div>
