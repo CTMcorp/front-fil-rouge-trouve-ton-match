@@ -1,0 +1,24 @@
+
+#header {
+  border-radius: 1.5rem;
+  border: solid 0.1rem #E31766;
+  padding: 0.7rem;
+
+  #logoInitiative {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem;
+  }
+
+  .logos {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 750px) {
+  #header {
+    border: none;
+  }
+}
