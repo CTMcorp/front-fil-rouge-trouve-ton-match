@@ -1,4 +1,4 @@
-import hologramme from "../../assets/logosInitiative/hologrammeColor.png"
+import hologramme from "../../../assets/logosInitiative/hologrammeColor.png"
 import "./footer.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebookF, faInstagram, faLinkedinIn, faTiktok} from "@fortawesome/free-brands-svg-icons";

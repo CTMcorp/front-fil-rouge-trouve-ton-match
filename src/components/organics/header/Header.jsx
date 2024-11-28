@@ -1,7 +1,7 @@
-import logo from "../../assets/logosInitiative/logo.png"
-import logoColor from "../../assets/logosInitiative/logoColor.png"
+import logo from "../../../assets/logosInitiative/logo.png"
+import logoColor from "../../../assets/logosInitiative/logoColor.png"
 import "./header.scss"
-import NavBar from "../navbar/NavBar.jsx";
+import NavBar from "../../molecules/navbar/NavBar.jsx";
 
 const Header = () => {
     return (

@@ -1,10 +1,11 @@
 import "./home.scss"
+import Button from "../../atoms/button/Button.jsx";
 
 const Home = () => {
 
     return (
             <div id="container">
-                <button id="buttonLogin">Se connecter</button>
+                <Button text="Se connecter" onClick={() => console.log("clicked")}></Button>
                 <div id="content">
                     <div id="titleContent">
                         <p id="title">Qu'est-ce que Trouve Ton Match ?</p>
