@@ -1,11 +1,14 @@
 import "./home.scss"
 import Button from "../../atoms/button/Button.jsx";
+import {Link} from "react-router-dom";
 
 const Home = () => {
 
     return (
             <div id="container">
-                <Button text="Se connecter" onClick={() => console.log("clicked")}></Button>
+                <Link to="/auth/login" style={{ textDecoration: 'none' }}>
+                    <Button text="Se connecter"></Button>
+                </Link>
                 <div id="content">
                     <div id="titleContent">
                         <p id="title">Qu'est-ce que Trouve Ton Match ?</p>

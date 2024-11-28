@@ -1,24 +1,21 @@
-import {useState} from 'react'
 import './App.scss'
-import Header from "./components/organics/header/Header.jsx";
-import Footer from "./components/organics/footer/Footer.jsx"
 import Home from "./components/pages/home/Home.jsx";
 import Login from "./components/connection/Login.jsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import MainLayout from "./components/MainLayout.jsx";
 import Register from "./components/connection/Register.jsx";
 
 function App() {
-    //const [count, setCount] = useState(0)
-
     return (
-        <>
-            <Header></Header>
-            <main>
-                {/*<Home></Home>*/}
-                {/*<Login></Login>*/}
-                <Register></Register>
-            </main>
-            <Footer></Footer>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route element={<MainLayout/>}>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/auth/login" element={<Login/>}/>
+                    <Route path="/auth/register" element={<Register/>}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
