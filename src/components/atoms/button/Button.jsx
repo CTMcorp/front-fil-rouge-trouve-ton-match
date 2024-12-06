@@ -3,11 +3,11 @@ import {Link} from "react-router-dom";
 import ("./button.scss")
 
 // eslint-disable-next-line react/prop-types
-const Button = ({text, type, onClick}) => {
+const Button = ({text, type, onClick, className}) => {
     return (
         <div>
             <button
-                id="buttonLogin"
+                className={`buttons ${className}`}
                 type={type}
                 onClick={onClick}
             >

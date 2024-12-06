@@ -1,14 +1,21 @@
-import axios from "axios";
+import client from "../config/axiosConfig.js";
 
-const baseApi = new URL("http://localhost:8080/auth");
+client.interceptors.response.use((response) => {
+        console.log(response);
+        sessionStorage.setItem('accessToken', response.data.accessToken);
+        return response;
+    },
+    (error) => {
+        return Promise.reject(error);
+    })
 
-class UserService  {
-    register(users) {
-        return axios.post(`${baseApi}/register`, users);
+class UserService {
+    register = async (firstname, lastname, email, password) => {
+        return await client.post('/auth/register', {firstname, lastname, email, password});
     }
 
-    login(credentials) {
-        return axios.post(`${baseApi}/login`, credentials);
+    login = async (email, password) => {
+        return await client.post('/auth/login', {email, password});
     }
 }
 

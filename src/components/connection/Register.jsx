@@ -14,6 +14,7 @@ const Register = () => {
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
+
     const handleRegister = async (e) => {
         e.preventDefault();
         try {

@@ -2,30 +2,35 @@ import "./connection.scss"
 import Button from "../atoms/button/Button.jsx";
 import Input from "../atoms/input/Input.jsx";
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {useNavigate} from "react-router";
-import UserService from "../../services/userService.js";
+import userService from "../../services/userService.js";
+import {AuthContext} from "../../config/AuthContext.jsx";
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
+    const {login} = useContext(AuthContext);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await UserService.login({ email, password });
-            if (response.data === 'Login successful') {
+            const response = await userService.login(email, password)
+            if (response && response.data) {
+                login();
                 navigate('/');
-            } else {
-                setMessage('Invalid credentials');
             }
         } catch (error) {
             setMessage('Invalid credentials');
             console.log(error);
         }
     }
+
+    /*useEffect(() => {
+        sessionStorage.setItem("accessToken", JSON.stringify())
+    })*/
 
     return (
         <div id="formContainer">

@@ -1,12 +1,15 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBars, faBell, faHouse, faUser, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faBell, faHouse, faRightFromBracket, faUser, faXmark} from "@fortawesome/free-solid-svg-icons";
 import "./navbar.scss"
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {Link} from "react-router-dom";
+import {AuthContext} from "../../../config/AuthContext.jsx";
+import Button from "../../atoms/button/Button.jsx";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const hideMenu = () => setIsOpen(false);
+    const {isLogged, logout} = useContext(AuthContext);
 
     return (
         <div className="navBarContainer">
@@ -31,6 +34,9 @@ const NavBar = () => {
                 </div>
                 <button><FontAwesomeIcon icon={faUser}/></button>
                 <button id="notification"><FontAwesomeIcon icon={faBell}/></button>
+                {isLogged ? (
+                    <Button text={<FontAwesomeIcon icon={faRightFromBracket} />} onClick={logout} className="logout"></Button>
+                ) : null}
             </nav>
         </div>
     );
