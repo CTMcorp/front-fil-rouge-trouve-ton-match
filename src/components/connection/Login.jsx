@@ -28,10 +28,6 @@ const Login = () => {
         }
     }
 
-    /*useEffect(() => {
-        sessionStorage.setItem("accessToken", JSON.stringify())
-    })*/
-
     return (
         <div id="formContainer">
             {/* TODO rajouter l'action action="/mapage"*/}
@@ -42,6 +38,7 @@ const Login = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     name="Email"
                     placeholder="Entrer votre adresse email"
+                    useValueAsLabel={false}
                 />
                 <Input
                     type="password"
@@ -49,12 +46,13 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     name="Mot de passe"
                     placeholder="Entrer votre mot de passe"
+                    useValueAsLabel={false}
                 />
                 <Link to="/auth/register" style={{textDecoration: 'none', color: "#E31766"}}>
                     Cliquez ici si vous n'avez pas encore de compte !
                 </Link>
                 <p>{message}</p>
-                <Button text="Se connecter" type="submit" onClick={() => console.log("clicked")}></Button>
+                <Button text="Se connecter" type="submit" onClick={() => {}}></Button>
             </form>
         </div>
     );

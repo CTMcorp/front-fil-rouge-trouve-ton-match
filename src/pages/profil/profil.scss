@@ -1,0 +1,14 @@
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #identity {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+
+}

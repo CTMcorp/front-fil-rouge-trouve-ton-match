@@ -1,7 +1,6 @@
 import client from "../config/axiosConfig.js";
 
 client.interceptors.response.use((response) => {
-        console.log(response);
         sessionStorage.setItem('accessToken', response.data.accessToken);
         return response;
     },
@@ -10,8 +9,8 @@ client.interceptors.response.use((response) => {
     })
 
 class UserService {
-    register = async (firstname, lastname, email, password) => {
-        return await client.post('/auth/register', {firstname, lastname, email, password});
+    register = async (firstname, lastname, email, password, role) => {
+        return await client.post('/auth/register', {firstname, lastname, email, password, role});
     }
 
     login = async (email, password) => {

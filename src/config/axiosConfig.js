@@ -10,10 +10,10 @@ const client = axios.create({
 
 client.interceptors.request.use(
     (config) => {
-        const token = sessionStorage.getItem('accessToken');
-        if (token) {
+        let token;
+        if (token && config.url !== '/auth/register') {
+            token = sessionStorage.getItem('accessToken');
             config.headers.Authorization = `Bearer ${token}`;
-            //sessionStorage.setItem('accessToken', token);
         }
         return config;
     },

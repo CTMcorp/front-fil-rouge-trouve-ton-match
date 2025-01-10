@@ -21,21 +21,21 @@ const NavBar = () => {
                 >
                     <FontAwesomeIcon icon={faBars}/>
                 </button>
-                <Link to="/" id="homeButton">
+                <Link to="/" id="homeButton" className="navBarLink">
                     <button><FontAwesomeIcon icon={faHouse}/></button>
                 </Link>
                 <div id="links">
                     <button id="closeMenu" onClick={hideMenu}><FontAwesomeIcon icon={faXmark}/></button>
-                    <Link to="" className="navBarLink" style={{ textDecoration: 'none', color: "white" }}>Découvrir les profils</Link>
-                    <Link to="" className="navBarLink" style={{ textDecoration: 'none', color: "white" }}>Messagerie</Link>
-                    <Link to="" className="navBarLink" style={{ textDecoration: 'none', color: "white" }}>Mes matchs</Link>
-                    <Link to="" className="navBarLink" style={{ textDecoration: 'none', color: "white" }}>Boîte à outils</Link>
-                    <Link to="" className="navBarLink" style={{ textDecoration: 'none', color: "white" }}>Mes rendez-vous</Link>
+                    <Link to="" className="navBarLink">Découvrir les profils</Link>
+                    <Link to="" className="navBarLink">Messagerie</Link>
+                    <Link to="" className="navBarLink">Mes matchs</Link>
+                    <Link to="" className="navBarLink">Boîte à outils</Link>
+                    <Link to="" className="navBarLink">Mes rendez-vous</Link>
                 </div>
-                <button><FontAwesomeIcon icon={faUser}/></button>
-                <button id="notification"><FontAwesomeIcon icon={faBell}/></button>
+                <Link to={"/ttm/me/profil"} className="navBarLink"><FontAwesomeIcon icon={faUser}/></Link>
+                <Link id="notification" to={""} className="navBarLink"><FontAwesomeIcon icon={faBell}/></Link>
                 {isLogged ? (
-                    <Button text={<FontAwesomeIcon icon={faRightFromBracket} />} onClick={logout} className="logout"></Button>
+                    <Button text={<FontAwesomeIcon icon={faRightFromBracket} />} onClick={logout} className="logout navBarLink"></Button>
                 ) : null}
             </nav>
         </div>

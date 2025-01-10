@@ -11,20 +11,25 @@ const Register = () => {
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
 
     const handleRegister = async (e) => {
         e.preventDefault();
+        if (!role) {
+            setMessage('Veuillez sélectionner un rôle.');
+            return;
+        }
         try {
-            const response = await UserService.register({ firstname, lastname, email, password });
-            setMessage(response.data);
-            if (response.data === 'User registered successfully') {
-                navigate('/login');
+            const response = await UserService.register(firstname, lastname, email, password, role);
+            console.log(response.data)
+            if (response && response.data) {
+                navigate('/auth/login');
             }
         } catch (error) {
-            setMessage('Registration failed.' );
+            setMessage('Registration failed.');
             console.log(error);
         }
     };
@@ -40,6 +45,7 @@ const Register = () => {
                     name="Prénom"
                     placeholder="Entrer votre prénom"
                     className="text"
+                    useValueAsLabel={false}
                 />
                 <Input
                     type="text"
@@ -48,6 +54,7 @@ const Register = () => {
                     name="Nom"
                     placeholder="Entrer votre nom"
                     className="text"
+                    useValueAsLabel={false}
                 />
                 <Input
                     type="email"
@@ -56,6 +63,7 @@ const Register = () => {
                     name="Email"
                     placeholder="Entrer votre adresse email"
                     className="text"
+                    useValueAsLabel={false}
                 />
                 <Input
                     type="password"
@@ -64,12 +72,37 @@ const Register = () => {
                     name="Mot de passe"
                     placeholder="Entrer votre mot de passe"
                     className="text"
+                    useValueAsLabel={false}
                 />
                 <div id="checkbox">
                     {/* FIXME si je passe en type radio, je peux quand même en sélectionner plusieurs. Problème avec les div ??*/}
-                    <Input type="checkbox" name="Administrateur" className="checkbox"></Input>
-                    <Input type="checkbox" name="Parrain" className="checkbox"></Input>
-                    <Input type="checkbox" name="Porteur" className="checkbox"></Input>
+                    <Input
+                        type="radio"
+                        name="role"
+                        value="Administrateur"
+                        onChange={(e) => setRole(e.target.value)}
+                        className="checkbox"
+                        checked={role === "Administrateur"}
+                        useValueAsLabel={true}
+                    />
+                    <Input
+                        type="radio"
+                        name="role"
+                        value="Parrain"
+                        onChange={(e) => setRole(e.target.value)}
+                        className="checkbox"
+                        checked={role === "Parrain"}
+                        useValueAsLabel={true}
+                    />
+                    <Input
+                        type="radio"
+                        name="role"
+                        value="Porteur"
+                        onChange={(e) => setRole(e.target.value)}
+                        className="checkbox"
+                        checked={role === "Porteur"}
+                        useValueAsLabel={true}
+                    />
                 </div>
                 <p>{message}</p>
                 <Button text="S'enregistrer" type="submit"></Button>

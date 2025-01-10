@@ -1,13 +1,15 @@
 import {createContext, useState} from "react";
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const AuthContext = createContext();
+export const AuthContext = createContext(undefined);
 
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({children}) => {
-
     const [isLogged, setIsLogged] = useState(false);
-    const login = () => setIsLogged(true);
+
+    const login = () => {
+        setIsLogged(true);
+    };
     const logout = () => {
         sessionStorage.removeItem('accessToken');
         setIsLogged(false);

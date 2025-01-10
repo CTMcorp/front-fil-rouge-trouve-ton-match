@@ -1,8 +1,8 @@
 import "./home.scss"
-import Button from "../../atoms/button/Button.jsx";
+import Button from "../../components/atoms/button/Button.jsx";
 import {Link} from "react-router-dom";
 import {useContext} from "react";
-import {AuthContext} from "../../../config/AuthContext.jsx";
+import {AuthContext} from "../../config/AuthContext.jsx";
 
 const Home = () => {
     const {isLogged} = useContext(AuthContext);
@@ -13,7 +13,10 @@ const Home = () => {
                 <Link to="/auth/login" style={{textDecoration: 'none'}}>
                     <Button text="Se connecter"></Button>
                 </Link>
-            ) : null}
+            ) : <div>
+                <h2>Bienvenue !</h2>
+            </div>
+            }
             <div id="content">
                 <div id="titleContent">
                     <p id="title">Qu'est-ce que Trouve Ton Match ?</p>
