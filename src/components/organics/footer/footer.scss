@@ -32,24 +32,6 @@
   }
 }
 
-@media (max-width: 600px) {
-  #footer {
-    .footerText {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      row-gap: 0.2rem;
-    }
-
-    .footerIcons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      font-size: 1rem;
-      align-items: center;
-      gap: 1.2rem;
-    }
-  }
-}
-
 @media (min-width: 750px) {
   #footer {
     display: grid;
