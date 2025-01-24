@@ -12,14 +12,15 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
-    const {login} = useContext(AuthContext);
+    const {loginContext} = useContext(AuthContext);
+    const {login} = userService();
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await userService.login(email, password)
+            const response = await login(email, password)
             if (response && response.data) {
-                login();
+                loginContext();
                 navigate('/');
             }
         } catch (error) {

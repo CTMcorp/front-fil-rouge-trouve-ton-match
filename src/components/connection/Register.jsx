@@ -3,8 +3,8 @@ import {useState} from "react";
 import ("./connection.scss")
 import Input from "../atoms/input/Input.jsx";
 import Button from "../atoms/button/Button.jsx";
-import UserService from "../../services/userService.js";
 import {useNavigate} from "react-router";
+import userService from "../../services/userService.js";
 
 const Register = () => {
     const [firstname, setFirstname] = useState('');
@@ -14,6 +14,7 @@ const Register = () => {
     const [role, setRole] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
+    const { register } = userService;
 
 
     const handleRegister = async (e) => {
@@ -23,7 +24,7 @@ const Register = () => {
             return;
         }
         try {
-            const response = await UserService.register(firstname, lastname, email, password, role);
+            const response = await register(firstname, lastname, email, password, role);
             console.log(response.data)
             if (response && response.data) {
                 navigate('/auth/login');

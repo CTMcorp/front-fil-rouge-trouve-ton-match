@@ -1,4 +1,4 @@
-import client from "../config/axiosConfig.js";
+import client, {_post} from "../config/axiosConfig.js";
 
 client.interceptors.response.use((response) => {
         sessionStorage.setItem('accessToken', response.data.accessToken);
@@ -8,14 +8,16 @@ client.interceptors.response.use((response) => {
         return Promise.reject(error);
     })
 
-class UserService {
-    register = async (firstname, lastname, email, password, role) => {
-        return await client.post('/auth/register', {firstname, lastname, email, password, role});
-    }
+const UserService = () => {
+    const register = (firstname, lastname, email, password, role) => {
+        return _post('/auth/register', {firstname, lastname, email, password, role});
+    };
 
-    login = async (email, password) => {
-        return await client.post('/auth/login', {email, password});
-    }
+    const login = (email, password) => {
+        return _post('/auth/login', {email, password});
+    };
+
+    return { register, login };
 }
 
-export default new UserService();
+export default UserService;
