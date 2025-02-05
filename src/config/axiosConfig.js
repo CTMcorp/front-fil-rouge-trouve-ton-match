@@ -25,21 +25,20 @@ client.interceptors.request.use(
 
 export default client;
 
-/*
-const _get = (url, config = {}) =>  {
-    return client.get(url, config);
+const _get = async (url, config = {}) =>  {
+    return await client.get(url, config);
 }
 
-const _delete = (url, config = {}) =>  {
-    return client.delete(url, config);
+const _delete = async (url, config = {}) => {
+    return await client.delete(url, config);
 }
 
-const _post = (url, data = {}, config = {}) =>  {
-    return client.post(url, data, config);
+const _post = async (url, data = {}, config = {}) =>  {
+    return await client.post(url, data, config);
 }
 
-const _put = (url, data = {}, config = {}) =>  {
-    return client.put(url, data, config);
+const _put = async (url, data = {}, config = {}) =>  {
+    return await client.put(url, data, config);
 }
 
-export { _get, _delete, _post, _put};*/
+export { _get, _delete, _post, _put};
