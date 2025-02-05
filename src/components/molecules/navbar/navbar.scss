@@ -17,10 +17,11 @@
     border: none;
     color: black;
     font-size: 1.2rem;
+    cursor: pointer;
   }
 
   #closeMenu {
-    color: #E31766;
+    color: #e31766;
     display: block;
   }
 
@@ -54,7 +55,7 @@
 @media (min-width: 830px) {
   .navBarContainer {
     border-radius: 1rem;
-    background: #E31766;
+    background: #e31766;
   }
 
   #navBar {
