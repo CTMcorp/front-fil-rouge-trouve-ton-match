@@ -29,7 +29,7 @@ const NavBar = () => {
                     <Link to="" className="navBarLink">Découvrir les profils</Link>
                     <Link to="" className="navBarLink">Messagerie</Link>
                     <Link to="" className="navBarLink">Mes matchs</Link>
-                    <Link to="" className="navBarLink">Boîte à outils</Link>
+                    <Link to="/BoiteOutil" className="navBarLink">Boîte à outils</Link>
                     <Link to="" className="navBarLink">Mes rendez-vous</Link>
                 </div>
                 <Link to={"/ttm/me/profil"} className="navBarLink"><FontAwesomeIcon icon={faUser}/></Link>

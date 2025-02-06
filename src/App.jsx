@@ -6,7 +6,7 @@ import MainLayout from "./components/MainLayout.jsx";
 import Register from "./components/connection/Register.jsx";
 import {AuthProvider} from "./config/AuthContext.jsx";
 import Profil from "./pages/profil/Profil.jsx";
-import BoiteOutil from "./pages/boiteOutil/BoiteOutil.jsx";
+import BoiteOutil from "./pages/BoiteOutil/BoiteOutil.jsx";
 
 function App() {
     return (
