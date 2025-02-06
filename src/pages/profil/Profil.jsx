@@ -1,13 +1,15 @@
 import "./profil.scss"
 import profilPhoto from "../../assets/logosInitiative/hologrammeColor.png"
 
+import { useFirstName } from "../../services/infoUserDetails"
+
 const Profil = () => {
     return (
         <>
             <div id="content">
                 <div id="identity">
                     <img alt="Photo de profil de l'utilisateur" src={profilPhoto}/>
-                    <p>Prénom</p>
+                    <p>{useFirstName()}</p>
                     <p>Nom</p>
                 </div>
                 <div>
