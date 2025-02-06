@@ -1,0 +1,19 @@
+.boiteOutil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableauDocuments{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.boiteOutil button{
+    max-width: 30%;
+}

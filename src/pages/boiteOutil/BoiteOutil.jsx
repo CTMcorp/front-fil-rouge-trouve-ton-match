@@ -1,20 +1,17 @@
+import Document from '../../components/molecules/document/Document';
+import './boiteOutil.scss';
+
 const BoiteOutil = () => {
     return (
-        <div>
+        <div className='boiteOutil'>
             <h1>Boite à outils</h1>
-            <div className="gestionDocument">
-                <button className="addDocument">
-                    <i className="fas fa-file-upload"></i>
+            <button className="addDocument">
                     <span>Importer un document</span>
-                </button>
-                <button className="exportDocument">
-                    <i className="fas fa-file-download"></i>
-                    <span>Exporter un document</span>
-                </button>
-                <button className="deleteDocument">
-                    <i className="fas fa-trash-alt"></i>
-                    <span>Supprimer un document</span>
-                </button>
+            </button>
+            <div className="tableauDocuments">
+                <Document />
+                <Document />
+                <Document />
             </div>
         </div>
     );
