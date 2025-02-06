@@ -6,6 +6,7 @@ import MainLayout from "./components/MainLayout.jsx";
 import Register from "./components/connection/Register.jsx";
 import {AuthProvider} from "./config/AuthContext.jsx";
 import Profil from "./pages/profil/Profil.jsx";
+import BoiteOutil from "./pages/boiteOutil/BoiteOutil.jsx";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                         <Route path="/auth/login" element={<Login/>}/>
                         <Route path="/auth/register" element={<Register/>}/>
                         <Route path="/ttm/me/profil" element={<Profil/>}/>
+                        <Route path="/boiteOutil" element={<BoiteOutil/>}/>
                     </Route>
                 </Routes>
             </AuthProvider>
