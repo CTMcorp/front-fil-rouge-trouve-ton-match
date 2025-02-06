@@ -22,16 +22,16 @@ const Footer = () => {
             </div>
 
             <div className="footerIcons">
-                <a href="https://www.instagram.com">
+                <a href="https://www.instagram.com/initiative_deux_sevres">
                     <FontAwesomeIcon icon={faInstagram}/>
                 </a>
-                <a href="https://www.facebook.com">
+                <a href="https://www.facebook.com/profile.php?id=61556616180678#">
                     <FontAwesomeIcon icon={faFacebookF}/>
                 </a>
-                <a href="https://www.linkedin.com">
+                <a href="https://www.linkedin.com/company/initiative-deux-sevres/?originalSubdomain=fr">
                     <FontAwesomeIcon icon={faLinkedinIn}/>
                 </a>
-                <a href="https://www.tiktok.com">
+                <a href="https://www.tiktok.com/@initiative.deux.s">
                     <FontAwesomeIcon icon={faTiktok}/>
                 </a>
             </div>
