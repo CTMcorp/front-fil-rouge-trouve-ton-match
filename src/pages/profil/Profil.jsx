@@ -2,7 +2,8 @@ import "./profil.scss";
 import profilPhoto from "../../assets/profilPic.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-
+import { Checkbox } from "../../components/atoms/checkbox/Checkbox";
+ 
 import { useEmail, useFirstName, useLastName } from "../../services/infoUserDetails"
 
 const Profil = () => {
@@ -40,12 +41,14 @@ const Profil = () => {
       </div>
       <div className="availabilities">
               <div>
-                <fieldset>
+                <fieldset className="disponibilites">
                   <legend>Disponibilités :</legend>
-                  <div>
-                    <input type="checkbox" id="scales" name="scales" checked />
-                    <label>Lundi</label>
-                  </div>
+                  <Checkbox name="scales" label="Lundi" />
+                  <Checkbox name="scales" label="Mardi" />
+                  <Checkbox name="scales" label="Mercredi" />
+                  <Checkbox name="scales" label="Jeudi" />
+                  <Checkbox name="scales" label="Vendredi" />
+                  <Checkbox name="scales" label="Samedi" />
                 </fieldset>
               </div>
             </div>

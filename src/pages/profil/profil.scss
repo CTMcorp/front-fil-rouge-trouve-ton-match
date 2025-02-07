@@ -4,7 +4,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 #profile-info {
@@ -51,14 +51,14 @@
   font-size: 1rem;
 }
 
-.availabilities, .needs {
-  margin-bottom: 1rem;
-}
-
 .profile-btn-section {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.disponibilites {
+  display: flex;
 }
 
 .profile-btn {
