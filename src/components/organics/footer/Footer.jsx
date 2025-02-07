@@ -10,16 +10,30 @@ const Footer = () => {
 
             <div className="footerText">
                 <p>Votre plateforme :</p>
-                <p> Initiatives Deux-Sèvres</p>
-                <p>06 79 87 56 09</p>
-                <p>accompagnement@initiativedeuxsevres.fr</p>
+                <p>
+                    <a href="https://www.initiative79.com">Initiative Deux-Sèvres</a>
+                </p>
+                <p>
+                    <a href="tel:+33679875609">06 79 87 56 09</a>
+                </p>
+                <p>
+                    <a href="mailto:accompagnement@initiativedeuxsevres.fr">accompagnement@initiativedeuxsevres.fr</a>
+                </p>
             </div>
 
             <div className="footerIcons">
-                <FontAwesomeIcon icon={faInstagram}/>
-                <FontAwesomeIcon icon={faFacebookF}/>
-                <FontAwesomeIcon icon={faLinkedinIn}/>
-                <FontAwesomeIcon icon={faTiktok}/>
+                <a href="https://www.instagram.com/initiative_deux_sevres">
+                    <FontAwesomeIcon icon={faInstagram}/>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61556616180678#">
+                    <FontAwesomeIcon icon={faFacebookF}/>
+                </a>
+                <a href="https://www.linkedin.com/company/initiative-deux-sevres/?originalSubdomain=fr">
+                    <FontAwesomeIcon icon={faLinkedinIn}/>
+                </a>
+                <a href="https://www.tiktok.com/@initiative.deux.s">
+                    <FontAwesomeIcon icon={faTiktok}/>
+                </a>
             </div>
         </div>
     )

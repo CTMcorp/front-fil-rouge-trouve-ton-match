@@ -4,7 +4,7 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: center;
-  padding: 0.7rem;
+  padding-top: 0.7rem;
 
   img {
     display: none;
@@ -15,12 +15,20 @@
     padding: 0.3rem 1rem;
   }
 
+  .footerText a {
+    text-decoration: none;
+    color: black;
+  }
+
   .footerIcons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    color: #E31766;
     font-size: 1.5rem;
+  }
+
+  .footerIcons a {
+    color: #E31766;
   }
 }
 
