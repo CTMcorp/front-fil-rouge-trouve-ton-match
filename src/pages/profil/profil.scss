@@ -1,146 +1,95 @@
-//Desktop
-@media (min-width: 769px) {
-  #content {
-    padding-bottom: 1rem;
-  }
-  #profile-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    .profile-pic {
-      margin: 50px;
-      overflow: hidden;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-      align-self: center;
-    }
-
-    .identity {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-
-      .user-info {
-        display: flex;
-        flex-direction: column;
-      }
-      .name {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        max-width: min-content;
-        line-height: 1px;
-      }
-    }
-
-    .availabilities {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 0;
-      text-align: center;
-    }
-
-    .needs {
-      align-self: center;
-    }
-
-    .profile-btn {
-      display: flex;
-      flex-direction: column;
-      align-self: center;
-      text-align: center;
-      width: 5rem;
-
-      svg {
-        cursor: pointer;
-        color: #e31766;
-      }
-    }
-  }
-
-  .profile-description {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 0.5rem;
-    margin: 1.5rem 3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+#content {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
-// @media (min-width: 801px) and (max-width: 1100px) {
-// }
+#profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
 
-// Mobile
-@media (max-width: 1100px) {
-  #content {
-    padding: 8px;
-    margin: 8px;
+.profile-section {
+  flex: 1;
+  padding: 1rem;
+}
 
-    #profile-info {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin: 16px;
-      row-gap: 1rem;
-      font-size: 16px;
+.profile-pic-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      .profile-pic {
-        width: 140px;
-        height: 140px;
-        border-radius: 100%;
-      }
-    }
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e31766;
+}
 
-    .availabilities {
-      // display: flex;
-      flex-direction: column;
-      text-align: center;
-      width: 100%;
-    }
+.user-info-section {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
 
-    .user-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
+.identity {
+  margin-bottom: 1rem;
+}
 
-    .name {
-      line-height: 8px;
-    }
+.user-info .name {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-    .profile-btn {
-      zoom: 1.5;
+.user-info .job-title {
+  font-size: 1.2rem;
+  color: #666;
+}
 
-      svg {
-        cursor: pointer;
-        color: #e31766;
-      }
-      p {
-        display: none;
-      }
-    }
+.availabilities, .needs {
+  margin-bottom: 1rem;
+}
 
-    .profile-description {
-      margin: 1rem;
-      padding: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      background-color: #fff;
-      border-radius: 0.5rem;
-    }
-  }
+.profile-btn-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #e31766;
+  transition: color 0.3s;
+}
+
+.profile-btn:hover {
+  color: #c71558;
+}
+
+.profile-btn p {
+  margin-left: 0.5rem;
+}
+
+.profile-description {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-description h2 {
+  margin-bottom: 1rem;
+}
+
+.profile-description p {
+  line-height: 1.6;
+  color: #333;
 }

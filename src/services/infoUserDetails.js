@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { FirstLetterMajuscule } from "../utils/string/StringUtils";
 
 const client = axios.create({
     baseURL: 'http://localhost:8080',
@@ -50,7 +51,7 @@ export const useFirstName = () => {
   const [firstName, setFirstName] = useState(null);
 
   useEffect(() => {
-    getUserDetails().then(data => setFirstName(data.firstname)).catch(error => console.error('Erreur lors de la récupération du prénom:', error));
+    getUserDetails().then(data => setFirstName(FirstLetterMajuscule(data.firstname))).catch(error => console.error('Erreur lors de la récupération du prénom:', error));
   }, []);
 
   return firstName;
@@ -60,7 +61,7 @@ export const useLastName = () => {
     const [lastName, setLastName] = useState(null);
     
     useEffect(() => {
-        getUserDetails().then(data => setLastName(data.lastname)).catch(error => console.error('Erreur lors de la récupération du nom de famille:', error));
+        getUserDetails().then(data => setLastName(FirstLetterMajuscule(data.lastname))).catch(error => console.error('Erreur lors de la récupération du nom de famille:', error));
     }, []);
     
     return lastName;
