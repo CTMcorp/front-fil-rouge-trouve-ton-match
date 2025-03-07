@@ -14,7 +14,7 @@ const Register = () => {
     const [role, setRole] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
-    const { register } = userService;
+    const { register } = userService();
 
 
     const handleRegister = async (e) => {
