@@ -20,7 +20,9 @@
     "react-dom": "^18.3.1",
     "react-router": "^7.0.1",
     "react-router-dom": "^7.0.1",
-    "react-stomp-hooks": "^2.1.0"
+    "react-stomp-hooks": "^2.1.0",
+    "@stomp/stompjs": "^7.1.0",
+    "sockjs-client": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
