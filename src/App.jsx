@@ -1,27 +1,34 @@
-import './App.scss'
+import "./App.scss";
 import Home from "./pages/home/Home.jsx";
 import Login from "./components/connection/Login.jsx";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./components/MainLayout.jsx";
 import Register from "./components/connection/Register.jsx";
-import {AuthProvider} from "./config/AuthContext.jsx";
+import { AuthProvider } from "./config/AuthContext.jsx";
 import Profil from "./pages/profil/Profil.jsx";
+import { StompSessionProvider } from "react-stomp-hooks";
+// import ChildComponent from "./pages/message/ChildComponent.jsx";
+import Message from "./pages/message/Message.jsx";
 
 function App() {
-    return (
-        <BrowserRouter>
-            <AuthProvider>
-                <Routes>
-                    <Route element={<MainLayout/>}>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/auth/login" element={<Login/>}/>
-                        <Route path="/auth/register" element={<Register/>}/>
-                        <Route path="/ttm/me/profil" element={<Profil/>}/>
-                    </Route>
-                </Routes>
-            </AuthProvider>
-        </BrowserRouter>
-    )
+  return (
+    <BrowserRouter>
+      <StompSessionProvider url={"http://localhost:8080/ws-endpoint"}>
+        {/* <ChildComponent /> */}
+        <AuthProvider>
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/auth/login" element={<Login />} />
+              <Route path="/auth/register" element={<Register />} />
+              <Route path="/ttm/me/profil" element={<Profil />} />
+              <Route path="/ttm/messagerie" element={<Message />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
+      </StompSessionProvider>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
