@@ -1,0 +1,55 @@
+.rdv-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .rdv-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rdv-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+    background-color: #e31766;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .rdv-date .day {
+    font-size: 1.5rem;
+  }
+  
+  .rdv-date .month {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .rdv-info {
+    flex: 1;
+  }
+  
+  .rdv-info p {
+    margin: 0.2rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .rdv-info p.status {
+    font-weight: bold;
+    color: #383838;
+  }
