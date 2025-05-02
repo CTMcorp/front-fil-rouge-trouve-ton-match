@@ -11,9 +11,13 @@ import { StompSessionProvider } from "react-stomp-hooks";
 import Message from "./pages/message/Message.jsx";
 
 function App() {
+  const token = sessionStorage.getItem("accessToken");
   return (
     <BrowserRouter>
-      <StompSessionProvider url={"http://localhost:8080/ws-endpoint"}>
+      <StompSessionProvider
+        url={"ws://localhost:8080/ws"}
+        connectHeaders={{ Authorization: `Bearer ${token}` }}
+      >
         {/* <ChildComponent /> */}
         <AuthProvider>
           <Routes>
@@ -22,7 +26,7 @@ function App() {
               <Route path="/auth/login" element={<Login />} />
               <Route path="/auth/register" element={<Register />} />
               <Route path="/ttm/me/profil" element={<Profil />} />
-              <Route path="/ttm/messagerie" element={<Message />} />
+              <Route path="/ttm/me/messagerie" element={<Message />} />
             </Route>
           </Routes>
         </AuthProvider>
