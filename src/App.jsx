@@ -6,31 +6,24 @@ import MainLayout from "./components/MainLayout.jsx";
 import Register from "./components/connection/Register.jsx";
 import { AuthProvider } from "./config/AuthContext.jsx";
 import Profil from "./pages/profil/Profil.jsx";
-import { StompSessionProvider } from "react-stomp-hooks";
 // import ChildComponent from "./pages/message/ChildComponent.jsx";
 import Message from "./pages/message/Message.jsx";
 
 function App() {
-  const token = sessionStorage.getItem("accessToken");
   return (
     <BrowserRouter>
-      <StompSessionProvider
-        url={"ws://localhost:8080/ws"}
-        connectHeaders={{ Authorization: `Bearer ${token}` }}
-      >
-        {/* <ChildComponent /> */}
-        <AuthProvider>
-          <Routes>
-            <Route element={<MainLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/auth/login" element={<Login />} />
-              <Route path="/auth/register" element={<Register />} />
-              <Route path="/ttm/me/profil" element={<Profil />} />
-              <Route path="/ttm/me/messagerie" element={<Message />} />
-            </Route>
-          </Routes>
-        </AuthProvider>
-      </StompSessionProvider>
+      {/* <ChildComponent /> */}
+      <AuthProvider>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/auth/login" element={<Login />} />
+            <Route path="/auth/register" element={<Register />} />
+            <Route path="/ttm/me/profil" element={<Profil />} />
+            <Route path="/ttm/me/messagerie" element={<Message />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

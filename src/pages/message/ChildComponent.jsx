@@ -13,8 +13,9 @@ const ChildComponent = () => {
   const [loadMessage, setLoadMessages] = useState(false);
   const [loader, setLoader] = useState(false);
   const [messages, setMessages] = useState([]);
+  const token = sessionStorage.getItem("accessToken");
+
   const client = useMemo(() => {
-    const token = sessionStorage.getItem("accessToken");
     console.log(token);
 
     const sockclient = new SockJS("http://localhost:8080/ws");
@@ -64,7 +65,11 @@ const ChildComponent = () => {
       <div>
         <button
           onClick={() =>
-            client.send(`/requestMessages/${conversationId}`, {}, "{}")
+            client.send(
+              `/requestMessages/${conversationId}`,
+              { Authorization: `Bearer ${token}` },
+              "{}"
+            )
           }
         >
           Request Messages
@@ -87,7 +92,9 @@ const ChildComponent = () => {
             client.send(
               `/send/${conversationId}`,
               {},
-              inputMessage.current.value
+              JSON.stringify({
+                content: inputMessage.current.value,
+              })
             )
           }
         >
