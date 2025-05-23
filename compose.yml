@@ -1,4 +1,58 @@
 services:
   web:
-    image: imagefrontttm
-  
+    image: registry.nocturlab.fr/tmesmin/frontimagettm
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.front-web.rule=Host(`ttm.nocturlab.fr`)
+      - traefik.http.services.front-web.loadbalancer.server.port=80
+    networks:
+      - traefik
+      - app
+
+  app:
+    image: registry.nocturlab.fr/tmesmin/backimagettm
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.back-web.rule=Host(`ttm.nocturlab.fr`) && Path(`/api`)
+      - traefik.http.services.back-web.loadbalancer.server.port=8080
+    environment:
+      HOST: 0.0.0.0
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/ttm
+      SPRING_LIQUIBASE_URL: jdbc:postgresql://db:5432/ttm
+      SPRING_LIQUIBASE_USER: postgres
+      SPRING_LIQUIBASE_PASSWORD: postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - db
+      - traefik
+      - app
+
+  db: 
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ttm
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - backttm_data:/var/libs/postgresql/data
+    networks:
+      - db
+
+volumes:
+  backttm_data:
+
+networks:
+  db:
+  app:
+  traefik:
+    external: true
+    name: traefik_default
