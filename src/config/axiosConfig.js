@@ -2,10 +2,10 @@ import axios from "axios";
 
 const client = axios.create({
   withCredentials: true,
-  baseURL: "",
-  headers: {
-    "Content-Type": "application/json",
-  },
+    baseURL: '',
+    headers: {
+        'Content-Type': 'application/json'
+    }
 });
 
 client.interceptors.request.use(
