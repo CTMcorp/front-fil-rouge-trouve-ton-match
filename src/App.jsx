@@ -8,6 +8,7 @@ import { AuthProvider } from "./config/AuthContext.jsx";
 import Profil from "./pages/profil/Profil.jsx";
 // import ChildComponent from "./pages/message/ChildComponent.jsx";
 import Message from "./pages/message/Message.jsx";
+import Document from "./pages/documents/Document.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/auth/register" element={<Register />} />
             <Route path="/ttm/me/profil" element={<Profil />} />
             <Route path="/ttm/me/messagerie" element={<Message />} />
+            <Route path="/ttm/me/documents" element={<Document />} />
           </Route>
         </Routes>
       </AuthProvider>
